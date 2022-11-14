@@ -47,6 +47,9 @@ def test(base_model, test_dataloader, args, config, logger = None):
         "02958343", #car
         "04090263", #rifle
         "03759954", # microphone
+        "00000001",  # basic
+        "00000002",  # side
+        "00000003",  # cross
     ]
     with torch.no_grad():
         for idx, (taxonomy_ids, model_ids, data) in enumerate(test_dataloader):
@@ -65,6 +68,12 @@ def test(base_model, test_dataloader, args, config, logger = None):
                 a, b = 0, 75
             elif taxonomy_ids[0] == "03001627":
                 a, b = 30, -45
+            elif taxonomy_ids[0] == "00000001":
+                a, b = 30, -45
+            elif taxonomy_ids[0] == "00000002":
+                a, b = 30, -45
+            elif taxonomy_ids[0] == "00000003":
+                a, b = 30, -45            
             else:
                 a, b = 0, 0
 
